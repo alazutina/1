@@ -1,0 +1,70 @@
+@startuml
+package "bjs" #DDDDDD {
+
+    class Card {
+       +Suit suit
+       +Rank rank
+       +int val
+       +int id
+ 
+
+        +Card()
+        +Card( Suit suit, Rank rank, int val)
+        +void setName(Suit s)
+        +void setName(Rank r)
+        +void setName(int v)
+        +void setID(int id)
+        +getCard(Rank rank, Suit suit): String
+        
+    }
+
+    class Deck{
+           +List<Card> d 
+           +int a[] 
+
+        +Deck()
+    
+
+
+
+    }
+
+
+    class BlackjackSolitaireRunner{
+           +BlackjackSolitaire bjs
+
+
+        +static void main(String[] args)
+    
+
+
+
+    }
+
+
+    class BlackjackSolitaire {
+             +Deck d 
+             +String table[]    
+             +int [] tableVal     
+             +int col
+             +int trash
+             +int sum
+
+
+              +BlackjackSolitaire()
+              +void printTable()
+              +sum(int sumOfLine): int
+              +sumLine(int sumOfLine, int a_col): int
+              +void score()
+              +void play()
+
+    }
+
+
+       BlackjackSolitaireRunner <--- BlackjackSolitaire : bjs
+    Deck ---> BlackjackSolitaire  :Deck d 
+    Card ---> Deck : Cards
+    
+  
+}
+@enduml
